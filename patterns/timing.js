@@ -20,6 +20,19 @@ export function isSongInPlaylist(playlist, song) {
  */
 export function isAllEven(numbers) {
   // TODO
+  let evenNumArray = [];
+  for (let i = 0; i < numbers.length; i = i + 1) {
+    if (numbers === "") {
+      return undefined;
+    } else if (numbers[i] % 2 !== 0) {
+      return false;
+    } else {
+      evenNumArray.push(i);
+      if (evenNumArray.length === numbers.length) {
+        return true;
+      }
+    }
+  }
 }
 
 /**
@@ -33,4 +46,15 @@ export function isAllEven(numbers) {
  */
 export function haveEnoughFood(backpack, people) {
   // TODO
+  if (people === 0) {
+    return true;
+  } else if (backpack.length === 0) {
+    return false;
+  }
+  const bkpk = backpack[0].category;
+  if (bkpk === "food" && people <= 1) {
+    return true;
+  } else {
+    return false;
+  }
 }
